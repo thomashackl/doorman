@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-28 14:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: controllers/configuration.php:40
+msgid "Information"
+msgstr ""
+
+#: controllers/configuration.php:40
+msgid ""
+"Stellen Sie hier für Veranstaltungen ausgewählter Einrichtungen ein, ob "
+"automatisch vor Veranstaltungsbeginn bestimmte Einstellungen an den "
+"Zugangsberechtigungen vorgenommen werden sollen."
+msgstr ""
+
+#: controllers/configuration.php:45 views/configuration/index.php:12
+msgid "Aktionen"
+msgstr ""
+
+#: controllers/configuration.php:48 controllers/configuration.php:49
+msgid "Neue Konfiguration für Einrichtung anlegen"
+msgstr ""
+
+#: controllers/configuration.php:71 views/configuration/index.php:24
+msgid "Konfiguration bearbeiten"
+msgstr ""
+
+#: controllers/configuration.php:71
+msgid "Konfiguration hinzufügen"
+msgstr ""
+
+#: controllers/configuration.php:99
+#, php-format
+msgid "Die Konfiguration für %s wurde gelöscht."
+msgstr ""
+
+#: controllers/configuration.php:101
+#, php-format
+msgid "Die Konfiguration für %s konnte nicht gelöscht werden."
+msgstr ""
+
+#: controllers/configuration.php:114
+msgid "Das Ticket für diese Aktion ist ungültig."
+msgstr ""
+
+#: DoormanCronjob.php:24
+msgid "Automatische Einstellungen der Zugangsberechtigungen"
+msgstr ""
+
+#: DoormanCronjob.php:28
+msgid ""
+"Setzt automatisch vor Beginn einer Veranstaltung Einstellungen für "
+"Zugangsberechtigungen"
+msgstr ""
+
+#: DoormanPlugin.class.php:44
+msgid "Automatische Anmeldeeinstellungen"
+msgstr ""
+
+#: views/configuration/ask_delete.php:2
+#, php-format
+msgid ""
+"Wollen Sie wirklich die Konfiguration für die Einrichtung \"%s\" löschen?"
+msgstr ""
+
+#: views/configuration/configure.php:5
+msgid "Grunddaten"
+msgstr ""
+
+#: views/configuration/configure.php:8 views/configuration/index.php:7
+msgid "Einrichtung"
+msgstr ""
+
+#: views/configuration/configure.php:8
+msgid "Einrichtung auswählen"
+msgstr ""
+
+#: views/configuration/configure.php:21
+msgid ""
+"Wie viele Tage vor Veranstaltungsbeginn sollen die Einstellungen gesetzt "
+"werden?"
+msgstr ""
+
+#: views/configuration/configure.php:27
+msgid "Automatisch zu setzende Einstellungen"
+msgstr ""
+
+#: views/configuration/configure.php:31
+msgid "Anmeldung auf verbindlich setzen?"
+msgstr ""
+
+#: views/configuration/configure.php:35
+msgid "Automatisches Nachrücken abschalten?"
+msgstr ""
+
+#: views/configuration/configure.php:39 views/configuration/index.php:11
+msgid "Warteliste deaktivieren?"
+msgstr ""
+
+#: views/configuration/configure.php:47
+msgid "Speichern"
+msgstr ""
+
+#: views/configuration/configure.php:48
+msgid "Abbrechen"
+msgstr ""
+
+#: views/configuration/index.php:1
+msgid "Konfiguration der automatischen Anmeldeeinstellungen"
+msgstr ""
+
+#: views/configuration/index.php:4
+msgid "Vorhandene Konfigurationen"
+msgstr ""
+
+#: views/configuration/index.php:8
+msgid "Tage vor Beginn"
+msgstr ""
+
+#: views/configuration/index.php:9
+msgid "Verbindliche Anmeldung?"
+msgstr ""
+
+#: views/configuration/index.php:10
+msgid "automatisches Nachrücken?"
+msgstr ""
+
+#: views/configuration/index.php:20 views/configuration/index.php:21
+#: views/configuration/index.php:22
+msgid "Ja"
+msgstr ""
+
+#: views/configuration/index.php:20 views/configuration/index.php:21
+#: views/configuration/index.php:22
+msgid "Nein"
+msgstr ""
+
+#: views/configuration/index.php:27
+msgid "Konfiguration löschen"
+msgstr ""
