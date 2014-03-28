@@ -57,7 +57,11 @@ class ConfigurationController extends AuthenticatedController {
             $insts = Institute::getInstitutes();
             $this->institutes = array();
             foreach ($insts as $i) {
-                $configured =  array_map(function($e) { return $e->Institute->id; }, $this->configs);
+                if ($this->configs) {
+                    $configured =  array_map(function($e) { return $e->Institute->id; }, $this->configs);
+                } else {
+                    $configured = array();
+                }
                 if (!in_array($i['Institut_id'], $configured)) {
                     if ($i['is_fak']) {
                         $this->institutes[$i['Institut_id']] = '<b>'.htmlReady($i['Name']).'</b>';

@@ -37,7 +37,7 @@ class DoormanCronjob extends CronJob {
     }
 
     /**
-     * Send all prepared messages.
+     * Check for courses settings that need to be changes.
      */
     public function execute($last_result, $parameters = array()) {
         StudipAutoloader::addAutoloadPath(realpath(dirname(__FILE__).'/models'));
