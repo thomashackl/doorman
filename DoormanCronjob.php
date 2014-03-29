@@ -75,11 +75,11 @@ class DoormanCronjob extends CronJob {
                         Log::info_doorman("\tEnabled binding admission.");
                     }
                     if ($config->disable_moving_up) {
-                        $course->disable_moving_up = 1;
+                        $course->admission_disable_waitlist_move = 1;
                         Log::info_doorman("\tDisabled automatic moving up from waiting list.");
                     }
                     if ($config->disable_waitlist) {
-                        $course->disable_waitlist = 1;
+                        $course->admission_disable_waitlist = 1;
                         Log::info_doorman("\tDisabled waiting list.");
                     }
                     $course->store();
