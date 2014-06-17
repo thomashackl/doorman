@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-28 14:30+0100\n"
+"POT-Creation-Date: 2014-06-17 15:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,25 +36,25 @@ msgstr ""
 msgid "Neue Konfiguration für Einrichtung anlegen"
 msgstr ""
 
-#: controllers/configuration.php:71 views/configuration/index.php:24
+#: controllers/configuration.php:75 views/configuration/index.php:24
 msgid "Konfiguration bearbeiten"
 msgstr ""
 
-#: controllers/configuration.php:71
+#: controllers/configuration.php:75
 msgid "Konfiguration hinzufügen"
 msgstr ""
 
-#: controllers/configuration.php:99
+#: controllers/configuration.php:103
 #, php-format
 msgid "Die Konfiguration für %s wurde gelöscht."
 msgstr ""
 
-#: controllers/configuration.php:101
+#: controllers/configuration.php:105
 #, php-format
 msgid "Die Konfiguration für %s konnte nicht gelöscht werden."
 msgstr ""
 
-#: controllers/configuration.php:114
+#: controllers/configuration.php:118
 msgid "Das Ticket für diese Aktion ist ungültig."
 msgstr ""
 
