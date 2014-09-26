@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-17 15:36+0200\n"
-"PO-Revision-Date: 2014-06-17 16:28+0200\n"
-"Last-Translator: Thomas <Thomas.Hackl@uni-passau.de>\n"
+"PO-Revision-Date: 2014-09-26 11:23+0200\n"
+"Last-Translator: Andrew <Andrew.Rink@uni-passau.de>\n"
 "Language-Team: English "
 "<http://example.com/weblate/projects/studip/doorman/en/>\n"
 "Language: en\n"
@@ -29,8 +29,9 @@ msgid ""
 "automatisch vor Veranstaltungsbeginn bestimmte Einstellungen an den "
 "Zugangsberechtigungen vorgenommen werden sollen."
 msgstr ""
-"You can add admission settings for the courses at selected institutes that "
-"will be applied at a given time before course start."
+"Here you can modify access permission settings for courses offered by "
+"selected organisational units, which are then applied automatically before "
+"the courses start."
 
 #: controllers/configuration.php:45 views/configuration/index.php:12
 msgid "Aktionen"
@@ -38,7 +39,7 @@ msgstr "Actions"
 
 #: controllers/configuration.php:48 controllers/configuration.php:49
 msgid "Neue Konfiguration für Einrichtung anlegen"
-msgstr "Create new institute configuration"
+msgstr "Create new configuration for organisational unit"
 
 #: controllers/configuration.php:75 views/configuration/index.php:24
 msgid "Konfiguration bearbeiten"
@@ -51,7 +52,7 @@ msgstr "Add configuration"
 #: controllers/configuration.php:103
 #, php-format
 msgid "Die Konfiguration für %s wurde gelöscht."
-msgstr "The configuration for %s was deleted."
+msgstr "The configuration for %s has been deleted."
 
 #: controllers/configuration.php:105
 #, php-format
@@ -64,23 +65,24 @@ msgstr "Invalid ticket for this action."
 
 #: DoormanCronjob.php:24
 msgid "Automatische Einstellungen der Zugangsberechtigungen"
-msgstr "Automatic setting of admission configuration"
+msgstr "Automatic setting of access permissions"
 
 #: DoormanCronjob.php:28
 msgid ""
 "Setzt automatisch vor Beginn einer Veranstaltung Einstellungen für "
 "Zugangsberechtigungen"
-msgstr "Automatically sets admission configuration before course start"
+msgstr "Automatically sets access permissions before courses start"
 
 #: DoormanPlugin.class.php:44
 msgid "Automatische Anmeldeeinstellungen"
-msgstr "Automatic admission settings"
+msgstr "Automatic registration settings"
 
 #: views/configuration/ask_delete.php:2
 #, php-format
 msgid ""
 "Wollen Sie wirklich die Konfiguration für die Einrichtung \"%s\" löschen?"
-msgstr "Do you really want to delete the configuration for institute %s?"
+msgstr ""
+"Do you really want to delete the configuration for organisational unit %s?"
 
 #: views/configuration/configure.php:5
 msgid "Grunddaten"
@@ -88,11 +90,11 @@ msgstr "Basic data"
 
 #: views/configuration/configure.php:8 views/configuration/index.php:7
 msgid "Einrichtung"
-msgstr "Institute"
+msgstr "Organisational unit"
 
 #: views/configuration/configure.php:8
 msgid "Einrichtung auswählen"
-msgstr "Choose institute"
+msgstr "Choose organisational unit"
 
 #: views/configuration/configure.php:21
 msgid ""
@@ -106,11 +108,11 @@ msgstr "Settings to automatically apply"
 
 #: views/configuration/configure.php:31
 msgid "Anmeldung auf verbindlich setzen?"
-msgstr "Set binding admission?"
+msgstr "Make registration binding?"
 
 #: views/configuration/configure.php:35
 msgid "Automatisches Nachrücken abschalten?"
-msgstr "Deactivate automatical moving up?"
+msgstr "Deactivate automatic moving-up?"
 
 #: views/configuration/configure.php:39 views/configuration/index.php:11
 msgid "Warteliste deaktivieren?"
@@ -126,7 +128,7 @@ msgstr "Cancel"
 
 #: views/configuration/index.php:1
 msgid "Konfiguration der automatischen Anmeldeeinstellungen"
-msgstr "Configuration of automatic admission settings"
+msgstr "Configuration of automatic registration settings"
 
 #: views/configuration/index.php:4
 msgid "Vorhandene Konfigurationen"
@@ -134,15 +136,15 @@ msgstr "Existing configurations"
 
 #: views/configuration/index.php:8
 msgid "Tage vor Beginn"
-msgstr "days before start"
+msgstr "Days before start"
 
 #: views/configuration/index.php:9
 msgid "Verbindliche Anmeldung?"
-msgstr "Binding admission?"
+msgstr "Binding registration?"
 
 #: views/configuration/index.php:10
 msgid "automatisches Nachrücken?"
-msgstr "Automatical moving up?"
+msgstr "Allow users to move up automatically?"
 
 #: views/configuration/index.php:20 views/configuration/index.php:21
 #: views/configuration/index.php:22
