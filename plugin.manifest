@@ -3,6 +3,6 @@ pluginclassname=DoormanPlugin
 origin=intelec
 version=1.0
 description=Automatically changes admission settings some time before course start.
-studipMinVersion=2.4
+studipMinVersion=3.1
 dbscheme=sql/install.sql
 uninstalldbscheme=sql/uninstall.sql
