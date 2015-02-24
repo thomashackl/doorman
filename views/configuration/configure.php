@@ -38,12 +38,10 @@
             <?= dgettext('doormanplugin', 'Warteliste deaktivieren?') ?>
         </label>
     </fieldset>
-    <div class="submit_wrapper">
-        <?= CSRFProtection::tokenTag(); ?>
-        <?php if ($config) { ?>
-        <input type="hidden" name="config_id" value="<?= $config->id ?>"/>
-        <?php } ?>
-        <?= \Studip\Button::create(dgettext('doormanplugin', 'Speichern'), array('data-dialog-button' => '', 'class' => 'accept')) ?>
-        <?= \Studip\Button::create(dgettext('doormanplugin', 'Abbrechen'), array('data-dialog-button' => '', 'class' => 'cancel')) ?>
-    </div>
+    <?= CSRFProtection::tokenTag(); ?>
+    <?php if ($config) { ?>
+    <input type="hidden" name="config_id" value="<?= $config->id ?>"/>
+    <?php } ?>
+    <?= \Studip\Button::create(dgettext('doormanplugin', 'Speichern'), array('data-dialog-button' => '', 'class' => 'accept')) ?>
+    <?= \Studip\Button::create(dgettext('doormanplugin', 'Abbrechen'), array('data-dialog-button' => '', 'class' => 'cancel')) ?>
 </form>
