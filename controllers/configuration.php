@@ -1,10 +1,10 @@
 <?php
 /**
  * configuration.php
- * 
+ *
  * Configuration functionality for Doorman: which institutes shall have
  * automatic course settings?
- * 
+ *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
  * published by the Free Software Foundation; either version 2 of
@@ -27,7 +27,6 @@ class ConfigurationController extends AuthenticatedController {
         } else {
             $this->set_layout($GLOBALS['template_factory']->open('layouts/base'));
         }
-        Navigation::activateItem('/admin/config/doorman');
         $this->set_content_type('text/html;charset=windows-1252');
         $configs = DoormanConfig::getAll();
         foreach ($configs as $config) {
@@ -36,18 +35,16 @@ class ConfigurationController extends AuthenticatedController {
     }
 
     public function index_action() {
-        $this->setInfoBoxImage('infobox/time.jpg');
-        $this->addToInfobox(_('Information'), _('Stellen Sie hier für '.
-            'Veranstaltungen ausgewählter Einrichtungen ein, ob automatisch '.
+        $helpbar = Helpbar::Get();
+        $helpbar->addPlainText('', dgettext('doormanplugin', 'Stellen Sie hier '.
+            'für Veranstaltungen ausgewählter Einrichtungen ein, ob automatisch '.
             'vor Veranstaltungsbeginn bestimmte Einstellungen an den '.
-            'Zugangsberechtigungen vorgenommen werden sollen.'),
-            'icons/16/black/date.png');
-        $this->addToInfobox(_('Aktionen'), '<a href="'.
-            $this->url_for('configuration/configure').
-            '" rel="lightbox" '.
-            tooltip(_('Neue Konfiguration für Einrichtung anlegen')).'>'.
-            _('Neue Konfiguration für Einrichtung anlegen').'</a>',
-            'icons/16/blue/add.png');
+            'Zugangsberechtigungen vorgenommen werden sollen.'));
+
+        $sidebar = Sidebar::Get();
+        $actionsWidget = new ActionsWidget();
+        $actionsWidget->addLink(dgettext('doormanplugin', 'Neue Konfiguration für Einrichtung anlegen'), $this->url_for('configuration/configure'), 'icons/16/blue/add.png')->asDialog('size=auto');
+        $sidebar->addWidget($actionsWidget);
     }
 
     public function configure_action($id='') {
@@ -72,7 +69,7 @@ class ConfigurationController extends AuthenticatedController {
             }
         }
         $this->response->add_header('X-No-Buttons', 1);
-        $this->response->add_header('X-Title', $id ? _('Konfiguration bearbeiten') : _('Konfiguration hinzufügen'));
+        $this->response->add_header('X-Title', $id ? dgettext('doormanplugin', 'Konfiguration bearbeiten') : dgettext('doormanplugin', 'Konfiguration hinzufügen'));
     }
 
     public function store_action() {
@@ -100,9 +97,9 @@ class ConfigurationController extends AuthenticatedController {
         $c = DoormanConfig::find($id);
         $n = $c->institute->name;
         if ($c->delete()) {
-            PageLayout::postMessage(MessageBox::success(sprintf(_('Die Konfiguration für %s wurde gelöscht.'), $n)));
+            PageLayout::postMessage(MessageBox::success(sprintf(dgettext('doormanplugin', 'Die Konfiguration für %s wurde gelöscht.'), $n)));
         } else {
-            PageLayout::postMessage(MessageBox::error(sprintf(_('Die Konfiguration für %s konnte nicht gelöscht werden.'), $n)));
+            PageLayout::postMessage(MessageBox::error(sprintf(dgettext('doormanplugin', 'Die Konfiguration für %s konnte nicht gelöscht werden.'), $n)));
         }
         $this->redirect($this->url_for('configuration'));
     }
@@ -115,7 +112,7 @@ class ConfigurationController extends AuthenticatedController {
      */
     private function check_ticket() {
         if (!check_ticket(Request::option('ticket'))) {
-            throw new InvalidArgumentException(_('Das Ticket für diese Aktion ist ungültig.'));
+            throw new InvalidArgumentException(dgettext('doormanplugin', 'Das Ticket für diese Aktion ist ungültig.'));
         }
     }
 }

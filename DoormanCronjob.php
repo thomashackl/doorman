@@ -1,6 +1,6 @@
 <?php
 /**
- * GarudaCronjob.php
+ * DoormanCronjob.php
  *
  * Creates and executes cron jobs for automagically configuring
  * admission settings.
@@ -19,6 +19,13 @@
  * Cron job for processing configurations.
  */
 class DoormanCronjob extends CronJob {
+
+    public function __construct() {
+        parent::__construct();
+
+        // Localization
+        bindtextdomain('doormanplugin', realpath(dirname(__FILE__).'/locale'));
+    }
 
     public static function getName() {
         return dgettext('doormanplugin', 'Automatische Einstellungen der Zugangsberechtigungen');

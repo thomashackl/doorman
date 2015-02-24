@@ -1,10 +1,10 @@
 <?php
 /**
  * DoormanPlugin.class.php
- * 
+ *
  * Plugin for automatic configuration of admission related settings X days
  * before course starts.
- * 
+ *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
  * published by the Free Software Foundation; either version 2 of
@@ -32,8 +32,8 @@ class DoormanPlugin extends StudIPPlugin implements SystemPlugin {
             parent::__construct();
             // Localization
             bindtextdomain('doormanplugin', realpath(dirname(__FILE__).'/locale'));
-            $navigation = new Navigation($this->getDisplayName(), PluginEngine::getURL($this, array(), 'configuration'));
-            Navigation::addItem('/admin/config/doorman', $navigation);
+            $navigation = new AutoNavigation($this->getDisplayName(), PluginEngine::getURL($this, array(), 'configuration'));
+            Navigation::addItem('/admin/institute/doorman', $navigation);
         }
     }
 

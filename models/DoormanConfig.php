@@ -23,18 +23,15 @@
 
 class DoormanConfig extends SimpleORMap {
 
-    /**
-     * @param string $id primary key of table
-     */
-    function __construct($id = null) {
-        $this->db_table = 'doormanplugin';
-        $this->belongs_to = array(
-            'institute' => array(
-                    'class_name' => 'Institute',
-                    'foreign_key' => 'institute_id'
-                )
+    protected static function configure($config = array()) {
+        $config['db_table'] = 'doormanplugin';
+
+        $config['belongs_to']['institute'] = array(
+            'class_name' => 'Institute',
+            'foreign_key' => 'institute_id'
         );
-        parent::__construct($id);
+
+        parent::configure($config);
     }
 
     public static function getAll() {

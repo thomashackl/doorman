@@ -1,15 +1,15 @@
-<h1><?= _('Konfiguration der automatischen Anmeldeeinstellungen') ?></h1>
+<h1><?= dgettext('doormanplugin', 'Konfiguration der automatischen Anmeldeeinstellungen') ?></h1>
 <?php if ($configs) { ?>
 <table class="default">
-    <caption><?= _('Vorhandene Konfigurationen') ?></caption>
+    <caption><?= dgettext('doormanplugin', 'Vorhandene Konfigurationen') ?></caption>
     <thead>
         <tr>
-            <th><?= _('Einrichtung') ?></th>
-            <th><?= _('Tage vor Beginn') ?></th>
-            <th><?= _('Verbindliche Anmeldung?') ?></th>
-            <th><?= _('automatisches Nachrücken?') ?></th>
-            <th><?= _('Warteliste deaktivieren?') ?></th>
-            <th><?= _('Aktionen') ?></th>
+            <th><?= dgettext('doormanplugin', 'Einrichtung') ?></th>
+            <th><?= dgettext('doormanplugin', 'Tage vor Beginn') ?></th>
+            <th><?= dgettext('doormanplugin', 'Verbindliche Anmeldung?') ?></th>
+            <th><?= dgettext('doormanplugin', 'automatisches Nachrücken?') ?></th>
+            <th><?= dgettext('doormanplugin', 'Warteliste deaktivieren?') ?></th>
+            <th><?= dgettext('doormanplugin', 'Aktionen') ?></th>
         </tr>
     </thead>
     <tbody>
@@ -17,14 +17,14 @@
         <tr>
             <td><?= htmlReady($config->Institute->name) ?></td>
             <td><?= $config->daysbefore ?></td>
-            <td><?= $config->set_admission_binding ? _('Ja') : _('Nein') ?></td>
-            <td><?= $config->disable_moving_up ? _('Ja') : _('Nein') ?></td>
-            <td><?= $config->disable_waitlist ? _('Ja') : _('Nein') ?></td>
+            <td><?= $config->set_admission_binding ? dgettext('doormanplugin', 'Ja') : dgettext('doormanplugin', 'Nein') ?></td>
+            <td><?= $config->disable_moving_up ? dgettext('doormanplugin', 'Ja') : dgettext('doormanplugin', 'Nein') ?></td>
+            <td><?= $config->disable_waitlist ? dgettext('doormanplugin', 'Ja') : dgettext('doormanplugin', 'Nein') ?></td>
             <td>
-                <a href="<?= $controller->url_for('configuration/configure', $config->id) ?>" rel="lightbox" title="<?= _('Konfiguration bearbeiten') ?>">
+                <a href="<?= $controller->url_for('configuration/configure', $config->id) ?>" data-dialog="size=auto" title="<?= dgettext('doormanplugin', 'Konfiguration bearbeiten') ?>">
                     <?= Assets::img('icons/16/blue/edit.png') ?>
                 </a>
-                <a href="<?= $controller->url_for('configuration/ask_delete', $config->id) ?>" title="<?= _('Konfiguration löschen') ?>">
+                <a href="<?= $controller->url_for('configuration/ask_delete', $config->id) ?>" title="<?= dgettext('doormanplugin', 'Konfiguration löschen') ?>">
                     <?= Assets::img('icons/16/blue/trash.png') ?>
                 </a>
             </td>
