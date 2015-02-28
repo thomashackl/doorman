@@ -33,7 +33,7 @@ class DoormanPlugin extends StudIPPlugin implements SystemPlugin {
             // Localization
             bindtextdomain('doormanplugin', realpath(dirname(__FILE__).'/locale'));
             $navigation = new AutoNavigation($this->getDisplayName(), PluginEngine::getURL($this, array(), 'configuration'));
-            Navigation::addItem('/admin/institute/doorman', $navigation);
+            Navigation::addItem('/admin/locations/doorman', $navigation);
         }
     }
 
