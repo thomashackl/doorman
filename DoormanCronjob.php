@@ -20,19 +20,12 @@
  */
 class DoormanCronjob extends CronJob {
 
-    public function __construct() {
-        parent::__construct();
-
-        // Localization
-        bindtextdomain('doormanplugin', realpath(dirname(__FILE__).'/locale'));
-    }
-
     public static function getName() {
-        return dgettext('doormanplugin', 'Automatische Einstellungen der Zugangsberechtigungen');
+        return 'Automatische Einstellungen der Zugangsberechtigungen';
     }
 
     public static function getDescription() {
-        return dgettext('doormanplugin', 'Setzt automatisch vor Beginn einer Veranstaltung Einstellungen für Zugangsberechtigungen');
+        return 'Setzt automatisch vor Beginn einer Veranstaltung Einstellungen für Zugangsberechtigungen';
     }
 
     public static function getParameters() {
@@ -48,7 +41,7 @@ class DoormanCronjob extends CronJob {
      */
     public function execute($last_result, $parameters = array()) {
         StudipAutoloader::addAutoloadPath(realpath(dirname(__FILE__).'/models'));
-        Log::set('doorman', $GLOBALS['TMP_PATH'].'/doorman.log');
+        Log::set('doorman', '/var/log/studip/doorman.log');
         $data = DoormanConfig::getAll();
         foreach ($data as $c) {
             $config = DoormanConfig::find($c);
