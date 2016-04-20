@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-17 15:36+0200\n"
-"PO-Revision-Date: 2015-01-21 10:59+0200\n"
-"Last-Translator: Thomas <Thomas.Hackl@uni-passau.de>\n"
-"Language-Team: English "
-"<http://example.com/weblate/projects/studip/doorman/en/>\n"
+"PO-Revision-Date: 2016-04-20 10:05+0000\n"
+"Last-Translator: Thomas Hackl <thomas.hackl@uni-passau.de>\n"
+"Language-Team: English <https://develop.intelec.uni-"
+"passau.de/weblate/projects/studip/doormanplugin/en/>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.1-dev\n"
+"X-Generator: Weblate 2.6-dev\n"
 
 #: controllers/configuration.php:40
 msgid "Information"
@@ -86,11 +86,11 @@ msgstr ""
 
 #: views/configuration/configure.php:5
 msgid "Grunddaten"
-msgstr "Basic details"
+msgstr "Basic data"
 
 #: views/configuration/configure.php:8 views/configuration/index.php:7
 msgid "Einrichtung"
-msgstr "Institute"
+msgstr "Institution"
 
 #: views/configuration/configure.php:8
 msgid "Einrichtung auswählen"
