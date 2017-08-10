@@ -25,7 +25,7 @@ class DoormanCronjob extends CronJob {
     }
 
     public static function getDescription() {
-        return 'Setzt automatisch vor Beginn einer Veranstaltung Einstellungen für Zugangsberechtigungen';
+        return 'Setzt automatisch vor Beginn einer Veranstaltung Einstellungen fÃ¼r Zugangsberechtigungen';
     }
 
     public static function getParameters() {

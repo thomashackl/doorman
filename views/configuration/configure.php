@@ -4,7 +4,7 @@
             <?= dgettext('doormanplugin', 'Grunddaten') ?>
         </legend>
         <label class="caption" for="institute">
-            <?= $config ? dgettext('doormanplugin', 'Einrichtung') : dgettext('doormanplugin', 'Einrichtung auswählen') ?>
+            <?= $config ? dgettext('doormanplugin', 'Einrichtung') : dgettext('doormanplugin', 'Einrichtung auswÃ¤hlen') ?>
         </label>
     <?php if (!$config) { ?>
         <select name="institute">
@@ -31,7 +31,7 @@
         </label>
         <label>
             <input type="checkbox" name="disable_moving_up"<?= $config ? ($config->disable_moving_up ? ' checked="checked"' : '') : '' ?>>
-            <?= dgettext('doormanplugin', 'Automatisches Nachrücken abschalten?') ?>
+            <?= dgettext('doormanplugin', 'Automatisches NachrÃ¼cken abschalten?') ?>
         </label>
         <label>
             <input type="checkbox" name="disable_waitlist"<?= $config ? ($config->disable_waitlist ? ' checked="checked"' : '') : '' ?>>

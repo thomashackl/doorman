@@ -7,7 +7,7 @@
             <th><?= dgettext('doormanplugin', 'Einrichtung') ?></th>
             <th><?= dgettext('doormanplugin', 'Tage vor Beginn') ?></th>
             <th><?= dgettext('doormanplugin', 'Verbindliche Anmeldung?') ?></th>
-            <th><?= dgettext('doormanplugin', 'automatisches Nachrücken?') ?></th>
+            <th><?= dgettext('doormanplugin', 'automatisches NachrÃ¼cken?') ?></th>
             <th><?= dgettext('doormanplugin', 'Warteliste deaktivieren?') ?></th>
             <th><?= dgettext('doormanplugin', 'Aktionen') ?></th>
         </tr>
@@ -22,10 +22,10 @@
             <td><?= $config->disable_waitlist ? dgettext('doormanplugin', 'Ja') : dgettext('doormanplugin', 'Nein') ?></td>
             <td>
                 <a href="<?= $controller->url_for('configuration/configure', $config->id) ?>" data-dialog="size=auto" title="<?= dgettext('doormanplugin', 'Konfiguration bearbeiten') ?>">
-                    <?= Assets::img('icons/16/blue/edit.png') ?>
+                    <?= Icon::create('edit') ?>
                 </a>
-                <a href="<?= $controller->url_for('configuration/ask_delete', $config->id) ?>" title="<?= dgettext('doormanplugin', 'Konfiguration löschen') ?>">
-                    <?= Assets::img('icons/16/blue/trash.png') ?>
+                <a href="<?= $controller->url_for('configuration/ask_delete', $config->id) ?>" title="<?= dgettext('doormanplugin', 'Konfiguration lÃ¶schen') ?>">
+                    <?= Icon::create('trash') ?>
                 </a>
             </td>
         </tr>

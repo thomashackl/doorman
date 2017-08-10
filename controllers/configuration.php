@@ -37,13 +37,13 @@ class ConfigurationController extends AuthenticatedController {
     public function index_action() {
         $helpbar = Helpbar::Get();
         $helpbar->addPlainText('', dgettext('doormanplugin', 'Stellen Sie hier '.
-            'für Veranstaltungen ausgewählter Einrichtungen ein, ob automatisch '.
+            'fÃ¼r Veranstaltungen ausgewÃ¤hlter Einrichtungen ein, ob automatisch '.
             'vor Veranstaltungsbeginn bestimmte Einstellungen an den '.
             'Zugangsberechtigungen vorgenommen werden sollen.'));
 
         $sidebar = Sidebar::Get();
         $actionsWidget = new ActionsWidget();
-        $actionsWidget->addLink(dgettext('doormanplugin', 'Neue Konfiguration für Einrichtung anlegen'), $this->url_for('configuration/configure'), 'icons/16/blue/add.png')->asDialog('size=auto');
+        $actionsWidget->addLink(dgettext('doormanplugin', 'Neue Konfiguration fÃ¼r Einrichtung anlegen'), $this->url_for('configuration/configure'), 'icons/16/blue/add.png')->asDialog('size=auto');
         $sidebar->addWidget($actionsWidget);
     }
 
@@ -69,7 +69,7 @@ class ConfigurationController extends AuthenticatedController {
             }
         }
         $this->response->add_header('X-No-Buttons', 1);
-        $this->response->add_header('X-Title', $id ? dgettext('doormanplugin', 'Konfiguration bearbeiten') : dgettext('doormanplugin', 'Konfiguration hinzufügen'));
+        $this->response->add_header('X-Title', $id ? dgettext('doormanplugin', 'Konfiguration bearbeiten') : dgettext('doormanplugin', 'Konfiguration hinzufÃ¼gen'));
     }
 
     public function store_action() {
@@ -97,9 +97,9 @@ class ConfigurationController extends AuthenticatedController {
         $c = DoormanConfig::find($id);
         $n = $c->institute->name;
         if ($c->delete()) {
-            PageLayout::postMessage(MessageBox::success(sprintf(dgettext('doormanplugin', 'Die Konfiguration für %s wurde gelöscht.'), $n)));
+            PageLayout::postMessage(MessageBox::success(sprintf(dgettext('doormanplugin', 'Die Konfiguration fÃ¼r %s wurde gelÃ¶scht.'), $n)));
         } else {
-            PageLayout::postMessage(MessageBox::error(sprintf(dgettext('doormanplugin', 'Die Konfiguration für %s konnte nicht gelöscht werden.'), $n)));
+            PageLayout::postMessage(MessageBox::error(sprintf(dgettext('doormanplugin', 'Die Konfiguration fÃ¼r %s konnte nicht gelÃ¶scht werden.'), $n)));
         }
         $this->redirect($this->url_for('configuration'));
     }
@@ -112,7 +112,7 @@ class ConfigurationController extends AuthenticatedController {
      */
     private function check_ticket() {
         if (!check_ticket(Request::option('ticket'))) {
-            throw new InvalidArgumentException(dgettext('doormanplugin', 'Das Ticket für diese Aktion ist ungültig.'));
+            throw new InvalidArgumentException(dgettext('doormanplugin', 'Das Ticket fÃ¼r diese Aktion ist ungÃ¼ltig.'));
         }
     }
 }
