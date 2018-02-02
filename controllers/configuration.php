@@ -27,7 +27,6 @@ class ConfigurationController extends AuthenticatedController {
         } else {
             $this->set_layout($GLOBALS['template_factory']->open('layouts/base'));
         }
-        $this->set_content_type('text/html;charset=windows-1252');
         $configs = DoormanConfig::getAll();
         foreach ($configs as $config) {
             $this->configs[] = DoormanConfig::find($config);
@@ -43,7 +42,10 @@ class ConfigurationController extends AuthenticatedController {
 
         $sidebar = Sidebar::Get();
         $actionsWidget = new ActionsWidget();
-        $actionsWidget->addLink(dgettext('doormanplugin', 'Neue Konfiguration für Einrichtung anlegen'), $this->url_for('configuration/configure'), 'icons/16/blue/add.png')->asDialog('size=auto');
+        $actionsWidget->addLink(dgettext('doormanplugin',
+            'Neue Konfiguration für Einrichtung anlegen'),
+            $this->url_for('configuration/configure'),
+            Icon::create('add', 'clickable'))->asDialog('size=auto');
         $sidebar->addWidget($actionsWidget);
     }
 
@@ -68,8 +70,9 @@ class ConfigurationController extends AuthenticatedController {
                 }
             }
         }
-        $this->response->add_header('X-No-Buttons', 1);
-        $this->response->add_header('X-Title', $id ? dgettext('doormanplugin', 'Konfiguration bearbeiten') : dgettext('doormanplugin', 'Konfiguration hinzufügen'));
+        PageLayout::setTitle($id ?
+            dgettext('doormanplugin', 'Konfiguration bearbeiten') :
+            dgettext('doormanplugin', 'Konfiguration hinzufügen'));
     }
 
     public function store_action() {

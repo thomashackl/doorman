@@ -1,4 +1,4 @@
-<form class="studip_form" action="<?= $controller->url_for('configuration/store') ?>" method="post">
+<form class="default" action="<?= $controller->url_for('configuration/store') ?>" method="post">
     <fieldset>
         <legend>
             <?= dgettext('doormanplugin', 'Grunddaten') ?>
@@ -18,7 +18,7 @@
     <?php } ?>
         <label class="caption">
             <?= dgettext('doormanplugin', 'Wie viele Tage vor Veranstaltungsbeginn sollen die Einstellungen gesetzt werden?') ?>
-            <input type="number" size="4" maxlength="3" name="daysbefore" value="<?= $config ? $config->daysbefore : 7 ?>"/>
+            <input type="number" size="4" name="daysbefore" value="<?= $config ? $config->daysbefore : 7 ?>"/>
         </label>
     </fieldset>
     <fieldset>
@@ -38,10 +38,12 @@
             <?= dgettext('doormanplugin', 'Warteliste deaktivieren?') ?>
         </label>
     </fieldset>
-    <?= CSRFProtection::tokenTag(); ?>
-    <?php if ($config) { ?>
-    <input type="hidden" name="config_id" value="<?= $config->id ?>"/>
-    <?php } ?>
-    <?= \Studip\Button::create(dgettext('doormanplugin', 'Speichern'), array('data-dialog-button' => '', 'class' => 'accept')) ?>
-    <?= \Studip\Button::create(dgettext('doormanplugin', 'Abbrechen'), array('data-dialog-button' => '', 'class' => 'cancel')) ?>
+    <footer data-dialog-button>
+        <?= CSRFProtection::tokenTag(); ?>
+        <?php if ($config) { ?>
+        <input type="hidden" name="config_id" value="<?= $config->id ?>"/>
+        <?php } ?>
+        <?= \Studip\Button::create(dgettext('doormanplugin', 'Speichern'), array('data-dialog-button' => '', 'class' => 'accept')) ?>
+        <?= \Studip\Button::create(dgettext('doormanplugin', 'Abbrechen'), array('data-dialog-button' => '', 'class' => 'cancel')) ?>
+    </footer>
 </form>
