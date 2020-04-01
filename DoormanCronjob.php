@@ -65,24 +65,24 @@ class DoormanCronjob extends CronJob {
             $query .= " ORDER BY `Seminar_id` ASC";
             $courses = $db->fetchFirst($query, array('instid' => $config->institute_id, 'semester' => $semester->beginn));
             foreach ($courses as $c) {
-                $start = veranstaltung_beginn($c, true);
+                $sem = Seminar::getInstance($c);
+                $start = $sem->getFirstDate('int');
                 if ($start && $start <= time()+($config->daysbefore*24*60*60)) {
                     Log::info_doorman('Checking course '.$c);
                     Log::info_doorman("\tCourse starts on ".date('d.m.y H:i', $start).".");
-                    $course = Course::find($c);
                     if ($config->set_admission_binding) {
-                        $course->admission_binding = 1;
+                        $sem->course->admission_binding = 1;
                         Log::info_doorman("\tEnabled binding admission.");
                     }
                     if ($config->disable_moving_up) {
-                        $course->admission_disable_waitlist_move = 1;
+                        $sem->course->admission_disable_waitlist_move = 1;
                         Log::info_doorman("\tDisabled automatic moving up from waiting list.");
                     }
                     if ($config->disable_waitlist) {
-                        $course->admission_disable_waitlist = 1;
+                        $sem->course->admission_disable_waitlist = 1;
                         Log::info_doorman("\tDisabled waiting list.");
                     }
-                    $course->store();
+                    $sem->course->store();
                 }
             }
             Log::info_doorman("--------------------------------------------------------------------------------");
